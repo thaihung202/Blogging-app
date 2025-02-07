@@ -14,7 +14,7 @@ resource "aws_subnet" "AppBlogging_subnet" {
   count = 2
   vpc_id                  = aws_vpc.AppBlogging_vpc.id
   cidr_block              = cidrsubnet(aws_vpc.AppBlogging_vpc.cidr_block, 8, count.index)
-  availability_zone       = element(["ap-southeast-1", "ap-south-1b"], count.index)
+  availability_zone       = element(["ap-southeast-1a", "ap-southeast-1b"], count.index)
   map_public_ip_on_launch = true
 
   tags = {
